@@ -9,6 +9,27 @@
 <body>
     <body>
         <h1>En la pagina de inicio desde una template</h1>
+        <a href="{{url_for('crearProducto')}}">Nuevo<a>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="row"></th>
+                        <th>ID</th>
+                        <th>NOMBRE</th>
+                        <th>PRECIO</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {%for producto in productos%}
+                    <tr>
+                        <td scope="row"></td>
+                        <td>{{producto['id']}}</td>
+                        <td>{{producto['nombre']}}</td>
+                        <td>{{producto['precio']}}</td>
+                    </tr>
+                   {% endfor %}
+                </tbody>
+            </table> 
     </body>
 </body>
 </html>
